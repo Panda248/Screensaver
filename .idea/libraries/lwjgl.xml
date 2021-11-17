@@ -2,6 +2,9 @@
   <library name="lwjgl">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/libs/lwjgl" />
+      <root url="file://$PROJECT_DIR$/libs/lwjgl_util" />
+      <root url="file://$PROJECT_DIR$/libs/lwjgl_util_applet" />
+      <root url="file://$PROJECT_DIR$" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
