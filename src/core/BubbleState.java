@@ -15,7 +15,7 @@ public class BubbleState extends BasicGameState
 
 	private int id;
 	private StateBasedGame sbg;
-	private Star[] star;
+	private Bubble[] bubble;
 	public BubbleState(int id)
 	{
 		this.id = id;
@@ -32,17 +32,19 @@ public class BubbleState extends BasicGameState
 		// This code happens when you enter a game state for the *first time.*
 		this.sbg = sbg;
 		gc.setShowFPS(true);
-		star = new Star[1000];
-		for(int i = 0; i < star.length; i++)
+		bubble = new Bubble[100];
+		for(int i = 0; i < bubble.length; i++)
 		{
-			star[i] = new Star();
+			bubble[i] = new Bubble();
 		}
+
+
 	}
 
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException
-	{	
+	{
 		// This is updates your game's logic every frame.  NO DRAWING.
-		for(Star i: star)
+		for(Bubble i: bubble)
 		{
 			i.update();
 		}
@@ -51,7 +53,12 @@ public class BubbleState extends BasicGameState
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
+		g.setBackground(Color.blue);
 		// This code renders shapes and images every frame.
+		for(Bubble i: bubble)
+		{
+			i.render(g);
+		}
 
 	}
 	
@@ -62,16 +69,14 @@ public class BubbleState extends BasicGameState
 
 	public void leave(GameContainer gc, StateBasedGame sbg) 
 	{
-		// This code happens when you leave a gameState. 
+		// This code happens when you leave a gameState.
+
 	}
 
 	public void keyPressed(int key, char c)
 	{
 		// This code happens every time the user presses a key
-		if(key == Input.KEY_1)
-		{
-			sbg.enterState(Main.STARFIELD_ID);
-		}
+		StateChange.changeState(key, sbg);
 	}
 	
 	public void mousePressed(int button, int x, int y)

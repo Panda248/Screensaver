@@ -20,7 +20,9 @@ public class Star {
         y+=(float)(Math.random()*2);
         if(y > Main.getScreenHeight())
         {
+            x = (float) (Math.random() * Main.getScreenWidth());
             y = 0;
+            size = (int) (Math.random()*3 + 1);
         }
     }
     public void render(Graphics g)

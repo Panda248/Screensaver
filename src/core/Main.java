@@ -12,20 +12,25 @@ public class Main extends StateBasedGame
 	private static AppGameContainer appgc;
 	
     public static final int TITLE_ID  = 0;
-	public static final int BUBBLE_ID = 1;
+	public static final int BUBBLEFIELD_ID = 1;
 	public static final int STARFIELD_ID = 2;
+	public static final int LINEFIELD_ID = 3;
+	public static final int DVDFIELD_ID = 4;
     private BasicGameState title;
-	private BasicGameState bubble;
+	private BasicGameState bubbleField;
 	private BasicGameState starField;
-    private BasicGameState game;  
+	private BasicGameState lineField;
+    private BasicGameState DVDField;
     
 	public Main(String name) 
 	{
 		super(name);
 		title = new TitleState(TITLE_ID);
-		bubble = new BubbleState(BUBBLE_ID);
-		starField = new StarfieldState(STARFIELD_ID);
-		game = new StarfieldState(STARFIELD_ID);
+		bubbleField = new BubbleState(BUBBLEFIELD_ID);
+		starField = new StarFieldState(STARFIELD_ID);
+		lineField = new LineFieldState(LINEFIELD_ID);
+		DVDField = new DVDState(DVDFIELD_ID);
+
 	}
 
 	public static int getScreenWidth()
@@ -41,9 +46,12 @@ public class Main extends StateBasedGame
 
 	public void initStatesList(GameContainer gc) throws SlickException 
 	{
-		addState(bubble);
+		addState(title);
+		addState(bubbleField);
 		addState(starField);
-		addState(game);
+		addState(lineField);
+		addState(DVDField);
+
 	}
 
 	public static void main(String[] args) 

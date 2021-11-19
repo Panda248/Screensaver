@@ -1,19 +1,16 @@
 package core;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.SlickException;
+import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class StarfieldState extends BasicGameState
+public class StarFieldState extends BasicGameState
 {
 
 	private int id;
 	private StateBasedGame sbg;
 	private Star[] star;
-	public StarfieldState(int id)
+	public StarFieldState(int id)
 	{
 		this.id = id;
 	}
@@ -47,6 +44,7 @@ public class StarfieldState extends BasicGameState
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
+		g.setBackground(Color.black);
 		// This code renders shapes and images every frame.
 		for(Star i: star)
 		{
@@ -67,10 +65,7 @@ public class StarfieldState extends BasicGameState
 	public void keyPressed(int key, char c)
 	{
 		// This code happens every time the user presses a key
-		if(key == Input.KEY_2)
-		{
-			sbg.enterState(Main.BUBBLE_ID);
-		}
+		StateChange.changeState(key, sbg);
 	}
 	
 	public void mousePressed(int button, int x, int y)
