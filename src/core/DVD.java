@@ -13,12 +13,12 @@ public class DVD {
 
     public DVD()
     {
-        this.width = 300f;
-        this.height = 200f;
+        this.width = 150f;
+        this.height = 100f;
         this.x = (float)(Math.random()*(Main.getScreenWidth()-this.width));
         this.y = (float)(Math.random()*(Main.getScreenHeight()-this.height));
-        this.xSpeed = 5;
-        this.ySpeed = 5;
+        this.xSpeed = 100;
+        this.ySpeed = 100;
         collided = false;
     }
     public void update()
@@ -36,6 +36,6 @@ public class DVD {
     }
     public void render(Graphics g)
     {
-        g.fillOval(100, 100, this.width, this.height);
+        g.fillOval(this.x, this.y, this.width, this.height);
     }
 }

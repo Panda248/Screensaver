@@ -20,7 +20,7 @@ public class Main extends StateBasedGame
 	private BasicGameState bubbleField;
 	private BasicGameState starField;
 	private BasicGameState lineField;
-    private BasicGameState DVDField;
+    private BasicGameState dvdField;
     
 	public Main(String name) 
 	{
@@ -29,7 +29,7 @@ public class Main extends StateBasedGame
 		bubbleField = new BubbleState(BUBBLEFIELD_ID);
 		starField = new StarFieldState(STARFIELD_ID);
 		lineField = new LineFieldState(LINEFIELD_ID);
-		DVDField = new DVDState(DVDFIELD_ID);
+		dvdField = new DVDState(DVDFIELD_ID);
 
 	}
 
@@ -50,7 +50,7 @@ public class Main extends StateBasedGame
 		addState(bubbleField);
 		addState(starField);
 		addState(lineField);
-		addState(DVDField);
+		addState(dvdField);
 
 	}
 

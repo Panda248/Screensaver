@@ -19,6 +19,7 @@ public class StateChange {
                 break;
             case Input.KEY_4:
                 sbg.enterState(Main.DVDFIELD_ID);
+                break;
             case Input.KEY_ESCAPE:
                 sbg.enterState(Main.TITLE_ID);
                 break;
