@@ -31,7 +31,7 @@ public class BubbleState extends BasicGameState
 	{
 		// This code happens when you enter a game state for the *first time.*
 		this.sbg = sbg;
-		gc.setShowFPS(true);
+		gc.setShowFPS(Main.debug);
 		bubble = new Bubble[100];
 		for(int i = 0; i < bubble.length; i++)
 		{

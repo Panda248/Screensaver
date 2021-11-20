@@ -24,7 +24,7 @@ public class StarFieldState extends BasicGameState
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException 
 	{
 		this.sbg = sbg;
-		gc.setShowFPS(true);
+		gc.setShowFPS(Main.debug);
 		star = new Star[1000];
 		for(int i = 0; i < star.length; i++)
 		{
