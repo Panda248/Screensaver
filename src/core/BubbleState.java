@@ -64,7 +64,12 @@ public class BubbleState extends BasicGameState
 	
 	public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException 
 	{
-		// This code happens when you enter a gameState.  
+		// This code happens when you enter a gameState.
+		bubble = new Bubble[100];
+		for(int i = 0; i < bubble.length; i++)
+		{
+			bubble[i] = new Bubble();
+		}
 	}
 
 	public void leave(GameContainer gc, StateBasedGame sbg) 

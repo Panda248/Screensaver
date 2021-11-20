@@ -28,6 +28,7 @@ public class DVDState extends BasicGameState
         // This code happens when you enter a game state for the *first time.*
         this.sbg = sbg;
         dvd = new DVD();
+
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException
@@ -46,6 +47,7 @@ public class DVDState extends BasicGameState
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {
         // This code happens when you enter a gameState.
+        dvd = new DVD();
     }
 
     public void leave(GameContainer gc, StateBasedGame sbg)

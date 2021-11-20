@@ -1,7 +1,8 @@
 package core;
 
 import org.newdawn.slick.AppGameContainer;
-import org.newdawn.slick.Font;
+import java.awt.Font;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
@@ -61,8 +62,8 @@ public class Main extends StateBasedGame
 	public void initStatesList(GameContainer gc) throws SlickException 
 	{
 		addState(title);
-		addState(bubbleField);
 		addState(starField);
+		addState(bubbleField);
 		addState(lineField);
 		addState(dvdField);
 		addState(about);
@@ -83,7 +84,7 @@ public class Main extends StateBasedGame
 			appgc.setVSync(true);
 
 		} 
-		catch (SlickException | FileNotFoundException e )
+		catch (SlickException | FontFormatException | IOException e )
 		{
 			e.printStackTrace();
 		}

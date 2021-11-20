@@ -4,6 +4,8 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import java.util.Locale;
+
 public class AboutState extends BasicGameState {
     private StateBasedGame sbg;
     private int id;
@@ -37,7 +39,14 @@ public class AboutState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException
     {
         // This code renders shapes and images every frame.
-
+            g.setFont(new TrueTypeFont(Main.mono, false));
+            g.scale(.5f,0.5f);
+            g.drawString("IN SCREENSAVER, YOU DO BLAH BLAH BLAH...",
+                    Main.getScreenWidth(), Main.getScreenHeight()*.33f);
+            g.drawString("HIT 1 FOR BUBBLES, 2 FOR STARS,",Main.getScreenWidth(), Main.getScreenHeight()*.66f);
+            g.drawString(" 3 FOR LINES, 4 FOR DVD, ", Main.getScreenWidth(), Main.getScreenHeight()*.99f);
+            g.drawString("AND ESCAPE TO RETURN TO TITLE.", Main.getScreenWidth(), Main.getScreenHeight()*1.33f);
+            g.drawString("HAVE FUN", Main.getScreenWidth(), Main.getScreenHeight()*1.66f);
     }
 
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException

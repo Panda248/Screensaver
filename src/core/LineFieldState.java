@@ -72,6 +72,11 @@ public class LineFieldState extends BasicGameState
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {
         // This code happens when you enter a gameState.
+        for(int i = 0; i < line.length; i++)
+        {
+            line[i] = new Line();
+        }
+        curLine = 0;
     }
 
     public void leave(GameContainer gc, StateBasedGame sbg)

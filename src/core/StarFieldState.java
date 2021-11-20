@@ -54,7 +54,12 @@ public class StarFieldState extends BasicGameState
 	
 	public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException 
 	{
-		// This code happens when you enter a gameState.  
+		// This code happens when you enter a gameState.
+		star = new Star[1000];
+		for(int i = 0; i < star.length; i++)
+		{
+			star[i] = new Star();
+		}
 	}
 
 	public void leave(GameContainer gc, StateBasedGame sbg) 

@@ -32,7 +32,7 @@ public class TitleState extends BasicGameState
 		gc.setShowFPS(Main.debug);
 		this.sbg = sbg;
 
-		}
+
 
 	}
 
@@ -45,10 +45,13 @@ public class TitleState extends BasicGameState
 
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException 
 	{
-		// This code renders shapes and images every frame.
-		g.setFont(new TrueTypeFont(Main.mono, true));
-		g.drawString("SCREENSAVER", Main.getScreenWidth()/2, Main.getScreenHeight()/2);
+		// This code renders shapes and images every frame.\
 		g.setBackground(Color.black);
+		g.scale(1,1);
+		g.drawLine(Main.getScreenWidth()/2, Main.getScreenHeight()/4, Main.getScreenWidth()/2, Main.getScreenHeight()*.75f);
+		g.setFont(new TrueTypeFont(Main.mono, false));
+		g.drawString("SCREENSAVER", Main.getScreenWidth()/2 + 10, Main.getScreenHeight()*.4f);
+
 	}
 	
 	public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException 
@@ -73,6 +76,10 @@ public class TitleState extends BasicGameState
 	
 	public void mousePressed(int button, int x, int y)
 	{
+		if(x > 0 && y > 0)
+		{
+			System.exit(0);
+		}
 		// This code happens every time the user presses the mouse
 	}
 	
