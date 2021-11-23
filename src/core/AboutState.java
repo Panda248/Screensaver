@@ -9,6 +9,7 @@ import java.util.Locale;
 public class AboutState extends BasicGameState {
     private StateBasedGame sbg;
     private int id;
+    private Button title;
     public AboutState(int id)
     {
         this.id = id;
@@ -25,28 +26,30 @@ public class AboutState extends BasicGameState {
         // This code happens when you enter a game state for the *first time.*
         gc.setShowFPS(Main.debug);
         this.sbg = sbg;
-
+        title = new Button(Main.getScreenWidth()/2 - 210, Main.getScreenHeight()/2-50, 200, 100, "Back");
 
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException
     {
         // This is updates your game's logic every frame.  NO DRAWING.
-
+        title.hover(gc.getInput().getMouseX(), gc.getInput().getMouseY());
 
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException
     {
         // This code renders shapes and images every frame.
+            title.render(g);
+            g.drawLine(Main.getScreenWidth()/2, Main.getScreenHeight()/4, Main.getScreenWidth()/2, Main.getScreenHeight()*.75f);
             g.setFont(new TrueTypeFont(Main.mono, false));
             g.scale(.5f,0.5f);
             g.drawString("IN SCREENSAVER, YOU DO BLAH BLAH BLAH...",
                     Main.getScreenWidth(), Main.getScreenHeight()*.33f);
-            g.drawString("HIT 1 FOR BUBBLES, 2 FOR STARS,",Main.getScreenWidth(), Main.getScreenHeight()*.66f);
-            g.drawString(" 3 FOR LINES, 4 FOR DVD, ", Main.getScreenWidth(), Main.getScreenHeight()*.99f);
-            g.drawString("AND ESCAPE TO RETURN TO TITLE.", Main.getScreenWidth(), Main.getScreenHeight()*1.33f);
-            g.drawString("HAVE FUN", Main.getScreenWidth(), Main.getScreenHeight()*1.66f);
+            g.drawString("HIT 1 FOR BUBBLES, 2 FOR STARS,",Main.getScreenWidth() + 10, Main.getScreenHeight()*.66f);
+            g.drawString(" 3 FOR LINES, 4 FOR DVD, ", Main.getScreenWidth() + 10, Main.getScreenHeight()*.99f);
+            g.drawString("AND ESCAPE TO RETURN TO TITLE.", Main.getScreenWidth() + 10, Main.getScreenHeight()*1.33f);
+            g.drawString("HAVE FUN", Main.getScreenWidth() + 10, Main.getScreenHeight()*1.66f);
     }
 
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
@@ -61,15 +64,16 @@ public class AboutState extends BasicGameState {
 
     public void keyPressed(int key, char c)
     {
-        if(key == Input.KEY_A)
-        {
-            sbg.enterState(Main.TITLE_ID);
-        }
+
         // This code happens every time the user presses a key
     }
 
     public void mousePressed(int button, int x, int y)
     {
+        if(title.clicked(x, y))
+        {
+            sbg.enterState(Main.TITLE_ID);
+        }
         // This code happens every time the user presses the mouse
     }
 }
