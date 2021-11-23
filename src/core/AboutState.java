@@ -26,7 +26,7 @@ public class AboutState extends BasicGameState {
         // This code happens when you enter a game state for the *first time.*
         gc.setShowFPS(Main.debug);
         this.sbg = sbg;
-        title = new Button(Main.getScreenWidth()/2 - 210, Main.getScreenHeight()/2-50, 200, 100, "Back");
+        title = new Button(Main.getScreenWidth()/2 - 210, Main.getScreenHeight()/2-50, 200, 50, "Back");
 
     }
 
@@ -44,7 +44,7 @@ public class AboutState extends BasicGameState {
             g.drawLine(Main.getScreenWidth()/2, Main.getScreenHeight()/4, Main.getScreenWidth()/2, Main.getScreenHeight()*.75f);
             g.setFont(new TrueTypeFont(Main.mono, false));
             g.scale(.5f,0.5f);
-            g.drawString("IN SCREENSAVER, YOU DO BLAH BLAH BLAH...",
+            g.drawString("IN SCREENSAVER, YOU LOOK AT SCREENSAVERS.",
                     Main.getScreenWidth(), Main.getScreenHeight()*.33f);
             g.drawString("HIT 1 FOR BUBBLES, 2 FOR STARS,",Main.getScreenWidth() + 10, Main.getScreenHeight()*.66f);
             g.drawString(" 3 FOR LINES, 4 FOR DVD, ", Main.getScreenWidth() + 10, Main.getScreenHeight()*.99f);
