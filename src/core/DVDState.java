@@ -42,6 +42,7 @@ public class DVDState extends BasicGameState
         // This code renders shapes and images every frame.
         g.setBackground(Color.black);
         dvd.render(g);
+        g.setColor(Color.white);
     }
 
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
